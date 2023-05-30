@@ -1,6 +1,8 @@
 ﻿using AssetManager.Application.Queries.Responses;
 using AssetManager.Infrastructure.Persistence;
 using MediatR;
+using AssetManager.Common.Exceptions;
+using AssetManager.Domain;
 
 namespace AssetManager.Application.Queries.Handlers
 {
@@ -17,6 +19,8 @@ namespace AssetManager.Application.Queries.Handlers
         {
             var product = await _context.Products.FindAsync(request.ProductId);
 
+            if (product == null)
+                throw new NotFoundException(nameof(Product), request.ProductId.ToString());
 
             return new GetProductsResponse()
             {
