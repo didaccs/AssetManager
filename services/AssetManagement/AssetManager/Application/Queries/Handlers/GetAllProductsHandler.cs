@@ -1,30 +1,28 @@
 ﻿using AssetManager.Application.Queries.Responses;
 using AssetManager.Infrastructure.Persistence;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace AssetManager.Application.Queries.Handlers
+namespace AssetManager.Application.Queries.Handlers;
+
+public class GetAllProductsHandler : IRequestHandler<GetAllProductSquery, IEnumerable<GetProductsResponse>>
 {
-    public class GetAllProductsHandler : IRequestHandler<GetAllProductSquery, IEnumerable<GetProductsResponse>>
+    private readonly AssesmentDbContext _context;
+    private readonly IMapper _mapper;
+
+    public GetAllProductsHandler(AssesmentDbContext context, IMapper mapper)
     {
-        private readonly AssesmentDbContext _context;
+        _context = context;
+        _mapper = mapper;
+    }
 
-        public GetAllProductsHandler(AssesmentDbContext context)
-        {
-            _context = context;
-        }
-
-        public async Task<IEnumerable<GetProductsResponse>> Handle(GetAllProductSquery request, CancellationToken cancellationToken)
-        {
-            var products = await _context.Products.ToListAsync();
-
-            return products.Select(p =>
-            new GetProductsResponse()
-            {
-                Category = p.Category,
-                Id = p.Id,
-                Name = p.Name
-            });
-        }
+    public async Task<IEnumerable<GetProductsResponse>> Handle(GetAllProductSquery request, CancellationToken cancellationToken)
+    {
+        return await _context.Products
+                            .AsNoTracking()
+                            .ProjectTo<GetProductsResponse>(_mapper.ConfigurationProvider)
+                            .ToListAsync();
     }
 }

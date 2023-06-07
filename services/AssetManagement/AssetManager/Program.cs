@@ -26,6 +26,9 @@ builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBeh
 // Add MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
 
+// Add AutoMapper
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

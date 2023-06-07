@@ -1,9 +1,8 @@
 ﻿using AssetManager.Application.Queries.Responses;
 using MediatR;
 
-namespace AssetManager.Application.Queries
+namespace AssetManager.Application.Queries;
+
+public class GetAllProductSquery: IRequest<IEnumerable<GetProductsResponse>>
 {
-    public class GetAllProductSquery: IRequest<IEnumerable<GetProductsResponse>>
-    {
-    }
 }
