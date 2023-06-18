@@ -7,6 +7,6 @@ namespace AssetManager.Application.Queries;
 public class GetProductQuery : IRequest<GetProductsResponse>
 {
     [Required]
-    public int ProductId { get; set; }
+    public string ProductId { get; set; }
 
 }
