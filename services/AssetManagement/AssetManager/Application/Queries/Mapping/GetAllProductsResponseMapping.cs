@@ -9,6 +9,5 @@ public class GetAllProductsResponseMapping: Profile
 {
     public GetAllProductsResponseMapping() =>
         CreateMap<Product, GetProductsResponse>()
-        .ForMember(s => s.Id, opt => opt.MapFrom<IntegerToHashIdValueResolver, int>(src=> src.Id));
-
+        .ForMember(s => s.Id, opt => opt.MapFrom<IntegerToHashIdMemberValueResolver, int>(s=> s.Id));
 }

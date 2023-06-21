@@ -1,7 +1,6 @@
 ﻿using AssetManager.Application.Queries.Responses;
 using AssetManager.Infrastructure.Persistence;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,9 +19,10 @@ public class GetAllProductsHandler : IRequestHandler<GetAllProductSquery, IEnume
 
     public async Task<IEnumerable<GetProductsResponse>> Handle(GetAllProductSquery request, CancellationToken cancellationToken)
     {
-        return await _context.Products
+        var products = await _context.Products
                             .AsNoTracking()
-                            .ProjectTo<GetProductsResponse>(_mapper.ConfigurationProvider)
                             .ToListAsync();
+
+        return _mapper.Map<IEnumerable<GetProductsResponse>>(products);
     }
 }

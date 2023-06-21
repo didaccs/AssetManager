@@ -1,17 +1,11 @@
 ﻿using AssetManager.Common.Exceptions;
 using AutoMapper;
 using Common.HashIds;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Common.AutoMapper
 {
-    public class HashIdToIntegerValueResolver : IValueResolver<string, int, int>
+    public class HashIdToIntegerValueResolver : IValueConverter<string, int>
     {
         private readonly IConfiguration _configuration;
 
@@ -20,7 +14,7 @@ namespace Common.AutoMapper
             _configuration = configuration;
         }
 
-        public int Resolve(string source, int destination, int destMember, ResolutionContext context)
+        public int Convert(string source, ResolutionContext context)
         {
             var hashSecurityKey = _configuration.GetValue<string>("App:hashSecurityKey");
             if (string.IsNullOrEmpty(hashSecurityKey))

@@ -1,9 +1,9 @@
 using AssetManager.Common.FluentValidation;
 using AssetManager.Common.MediatR;
 using AssetManager.Infrastructure.Persistence;
+using Common.AutoMapper;
 using FluentValidation;
 using MediatR;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -28,6 +28,9 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Pr
 
 // Add AutoMapper
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddTransient<IntegerToHashIdMemberValueResolver>();
+builder.Services.AddTransient<HashIdToIntegerValueResolver>();
+
 
 var app = builder.Build();
 

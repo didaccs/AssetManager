@@ -1,20 +1,15 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Common.HashIds;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AssetManager.Common.Exceptions;
 
 namespace Common.AutoMapper
 {
-    public class IntegerToHashIdValueResolver : IMemberValueResolver<object, object, int, string>
+    public class IntegerToHashIdMemberValueResolver : IMemberValueResolver<object, object, int, string>
     {
         private readonly IConfiguration _configuration;
 
-        public IntegerToHashIdValueResolver(IConfiguration configuration)
+        public IntegerToHashIdMemberValueResolver(IConfiguration configuration)
         {
             _configuration = configuration;
         }
