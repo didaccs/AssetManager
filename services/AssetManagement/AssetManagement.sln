@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetManager", "AssetManager\AssetManager.csproj", "{573C67A3-72D1-4948-BDDB-C0D275740BC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManager.WebApi", "AssetManager\AssetManager.WebApi.csproj", "{573C67A3-72D1-4948-BDDB-C0D275740BC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4B564235-F337-4CE7-8149-66BD6B943F41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManager.Common", "Common\AssetManager.Common.csproj", "{4B564235-F337-4CE7-8149-66BD6B943F41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 ﻿using AssetManager.Application.Queries.Responses;
 using AssetManager.Domain;
 using AutoMapper;
-using Common.AutoMapper;
+using AssetManager.Common.AutoMapper;
 
 namespace AssetManager.Application.Queries.Mapping_Profiles;
 

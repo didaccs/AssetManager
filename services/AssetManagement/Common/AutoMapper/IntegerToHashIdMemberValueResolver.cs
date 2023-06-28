@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Configuration;
-using Common.HashIds;
+using AssetManager.Common.HashIds;
 using AssetManager.Common.Exceptions;
 
-namespace Common.AutoMapper
+namespace AssetManager.Common.AutoMapper
 {
     public class IntegerToHashIdMemberValueResolver : IMemberValueResolver<object, object, int, string>
     {

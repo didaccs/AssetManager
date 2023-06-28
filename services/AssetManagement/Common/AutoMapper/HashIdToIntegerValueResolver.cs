@@ -1,9 +1,9 @@
 ﻿using AssetManager.Common.Exceptions;
 using AutoMapper;
-using Common.HashIds;
+using AssetManager.Common.HashIds;
 using Microsoft.Extensions.Configuration;
 
-namespace Common.AutoMapper
+namespace AssetManager.Common.AutoMapper
 {
     public class HashIdToIntegerValueResolver : IValueConverter<string, int>
     {

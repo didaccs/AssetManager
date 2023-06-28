@@ -4,7 +4,7 @@ using MediatR;
 using AssetManager.Common.Exceptions;
 using AssetManager.Domain;
 using AutoMapper;
-using Common.AutoMapper;
+using AssetManager.Common.AutoMapper;
 
 namespace AssetManager.Application.Queries.Handlers;
 

@@ -1,7 +1,7 @@
 using AssetManager.Common.FluentValidation;
 using AssetManager.Common.MediatR;
 using AssetManager.Infrastructure.Persistence;
-using Common.AutoMapper;
+using AssetManager.Common.AutoMapper;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

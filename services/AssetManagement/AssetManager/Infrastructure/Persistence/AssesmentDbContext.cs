@@ -1,9 +1,11 @@
 ﻿using AssetManager.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace AssetManager.Infrastructure.Persistence
 {
-    public class AssesmentDbContext: DbContext
+    public class AssesmentDbContext: IdentityDbContext<IdentityUser>
     {
         public AssesmentDbContext(DbContextOptions<AssesmentDbContext> options) : base(options)
         {
@@ -20,6 +22,8 @@ namespace AssetManager.Infrastructure.Persistence
             modelBuilder.Entity<Contribution>().ToTable("Contribution");
             modelBuilder.Entity<Currency>().ToTable("Currency");
             modelBuilder.Entity<Product>().ToTable("Product");
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

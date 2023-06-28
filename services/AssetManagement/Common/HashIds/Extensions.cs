@@ -1,6 +1,6 @@
 ﻿using HashidsNet;
 
-namespace Common.HashIds
+namespace AssetManager.Common.HashIds
 {
     public static class Extensions
     {
