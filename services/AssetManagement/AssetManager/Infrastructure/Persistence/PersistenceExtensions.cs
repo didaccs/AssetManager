@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace AssetManager.Infrastructure.Persistence
 {
@@ -18,9 +19,12 @@ namespace AssetManager.Infrastructure.Persistence
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<AssesmentDbContext>();
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var dbSeed = new DatabaseSeed();
 
                 await dbSeed.SeedProducts(context);
+                await dbSeed.SeedUsers(userManager, roleManager);
             }
         }
     }

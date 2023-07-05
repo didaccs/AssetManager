@@ -1,5 +1,5 @@
 ﻿using AssetManager.Domain;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace AssetManager.Infrastructure.Persistence
 {
@@ -44,6 +44,27 @@ namespace AssetManager.Infrastructure.Persistence
                     });
 
                 await context.SaveChangesAsync();                
+            }
+        }
+
+        public async Task SeedUsers(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        {
+            var testUser = await userManager.FindByNameAsync("testUser");
+            if (testUser is null)
+                await userManager.CreateAsync(new IdentityUser{ UserName = "testUser" }, "Passw0rd.1234");
+
+            var otherUser = await userManager.FindByNameAsync("otherUser");
+            if (otherUser is null)
+                await userManager.CreateAsync(new IdentityUser { UserName = "otherUser" }, "Passw0rd.1234");
+
+            var adminRole = await roleManager.FindByNameAsync("Admin");
+            if (adminRole is null)
+            {
+                await roleManager.CreateAsync(new IdentityRole
+                {
+                    Name = "Admin"
+                });
+                await userManager.AddToRoleAsync(testUser, "Admin");            
             }
         }
     }

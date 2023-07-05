@@ -2,11 +2,13 @@ using AssetManager.Application.Commands;
 using AssetManager.Application.Queries;
 using AssetManager.Application.Queries.Responses;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AssetManager.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
     public class ProductsController : ControllerBase
     {
@@ -26,6 +28,7 @@ namespace AssetManager.Controllers
                 => _mediator.Send(query);
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProductCommand command)
         {
             await _mediator.Send(command);
