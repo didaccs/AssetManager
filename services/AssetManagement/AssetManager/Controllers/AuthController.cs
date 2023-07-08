@@ -1,9 +1,8 @@
-﻿using AssetManager.WebApi.Application.Commands.Responses;
-using AssetManager.WebApi.Application.Commands;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using AssetManager.WebApi.Services;
 using Microsoft.AspNetCore.Authorization;
+using AssetManager.Application.Features.Auth.Commands;
 
 namespace AssetManager.WebApi.Controllers
 {

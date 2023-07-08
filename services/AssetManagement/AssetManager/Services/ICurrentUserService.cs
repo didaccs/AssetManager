@@ -1,4 +1,4 @@
-﻿using AssetManager.WebApi.Domain;
+﻿using AssetManager.Application.Domain;
 
 namespace AssetManager.WebApi.Services;
 

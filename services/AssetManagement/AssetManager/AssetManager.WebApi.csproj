@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AssetManager.Application\AssetManager.Application.csproj" />
     <ProjectReference Include="..\Common\AssetManager.Common.csproj" />
   </ItemGroup>
 

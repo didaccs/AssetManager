@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManager.WebApi", "Asse
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManager.Common", "Common\AssetManager.Common.csproj", "{4B564235-F337-4CE7-8149-66BD6B943F41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetManager.Application", "AssetManager.Application\AssetManager.Application.csproj", "{8390730E-1344-4E4B-85AF-415079A92B18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4B564235-F337-4CE7-8149-66BD6B943F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B564235-F337-4CE7-8149-66BD6B943F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B564235-F337-4CE7-8149-66BD6B943F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8390730E-1344-4E4B-85AF-415079A92B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8390730E-1344-4E4B-85AF-415079A92B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8390730E-1344-4E4B-85AF-415079A92B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8390730E-1344-4E4B-85AF-415079A92B18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

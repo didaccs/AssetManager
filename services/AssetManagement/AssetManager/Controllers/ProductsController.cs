@@ -1,6 +1,5 @@
-using AssetManager.Application.Commands;
-using AssetManager.Application.Queries;
-using AssetManager.Application.Queries.Responses;
+using AssetManager.Application.Features.Products.Commands;
+using AssetManager.Application.Features.Products.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

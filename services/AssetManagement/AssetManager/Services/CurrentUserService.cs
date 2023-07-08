@@ -1,4 +1,4 @@
-﻿using AssetManager.WebApi.Domain;
+﻿using AssetManager.Application.Domain;
 using System.Security.Claims;
 
 namespace AssetManager.WebApi.Services;
