@@ -24,3 +24,5 @@ The following technologies and frameworks are utilized in the backend RestApi:
 # Infrastructure
 The infrastructure of the project is deployed on Azure and has the follow items:
  - Azure SQL Database
+
+This infrastructure has been managed as IaC using Terraform.
