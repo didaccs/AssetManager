@@ -1,5 +1,4 @@
 ﻿using AssetManager.Common.MediatR;
-using AssetManager.WebApi.Services;
 using Microsoft.OpenApi.Models;
 
 namespace AssetManager.WebApi;
@@ -42,8 +41,6 @@ public static class DependencyInjection
                 }
             });
         });
-
-        services.AddScoped<ICurrentUserService, CurrentUserService>();
 
         return services;
     }

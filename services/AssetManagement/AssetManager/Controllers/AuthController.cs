@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using AssetManager.WebApi.Services;
+using AssetManager.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using AssetManager.Application.Features.Auth.Commands;
 

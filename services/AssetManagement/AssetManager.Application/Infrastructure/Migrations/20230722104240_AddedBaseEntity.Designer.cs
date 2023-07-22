@@ -4,16 +4,19 @@ using AssetManager.Application.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AssetManager.Application.Migrations
+namespace AssetManager.Application.Infrastructure.Migrations
 {
     [DbContext(typeof(AssesmentDbContext))]
-    partial class AssesmentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230722104240_AddedBaseEntity")]
+    partial class AddedBaseEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

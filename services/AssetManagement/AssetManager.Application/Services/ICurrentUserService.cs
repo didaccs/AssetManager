@@ -1,6 +1,6 @@
 ﻿using AssetManager.Application.Domain;
 
-namespace AssetManager.WebApi.Services;
+namespace AssetManager.Application.Services;
 
 public interface ICurrentUserService
 {

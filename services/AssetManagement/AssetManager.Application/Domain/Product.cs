@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AssetManager.Application.Domain;
 
-public class Product
+public class Product : BaseEntity
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -12,6 +12,7 @@ using AssetManager.Common.FluentValidation;
 using AssetManager.Application.Domain;
 using Microsoft.EntityFrameworkCore;
 using AssetManager.Common.AutoMapper;
+using AssetManager.Application.Services;
 
 namespace AssetManager.Application;
 
@@ -42,6 +43,8 @@ public static class DependencyInjection
             .AddIdentityCore<IdentityUser>()
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AssesmentDbContext>();
+
+        services.AddScoped<ICurrentUserService, CurrentUserService>();
 
         services
             .AddHttpContextAccessor()
